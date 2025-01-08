@@ -22,6 +22,3 @@ from sklearn.metrics import accuracy_score
 ypred = model.predict(x_test)
 accuracy = accuracy_score(y_test, ypred)
 print(accuracy)
-
-import joblib
-joblib.dump(model, 'maayan.joblib')
