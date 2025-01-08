@@ -1,8 +1,8 @@
 import pandas as pd
-df = pd.read_csv('parkinson.csv')
+df = pd.read_csv('parkinsons.csv')
 df = df.dropna()
 feats = ['PPE','DFA']
-tg = 'Status'
+tg = 'status'
 x = df[feats]
 y = df[tg]
 
@@ -10,7 +10,7 @@ from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 xscale = scaler.fit_transform(x)
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(xscale, y, test_size=0.3, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(xscale, y, test_size=0.2, random_state=42)
 
 from sklearn.svm import SVC
 model = SVC()
