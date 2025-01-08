@@ -1,6 +1,7 @@
 import pandas as pd
 df = pd.read_csv('parkinsons.csv')
 df = df.dropna()
+
 feats = ['PPE','DFA']
 tg = 'status'
 x = df[feats]
@@ -9,6 +10,7 @@ y = df[tg]
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
 xscale = scaler.fit_transform(x)
+
 from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split(xscale, y, test_size=0.2, random_state=42)
 
@@ -20,3 +22,6 @@ from sklearn.metrics import accuracy_score
 ypred = model.predict(x_test)
 accuracy = accuracy_score(y_test, ypred)
 print(accuracy)
+
+import joblib
+joblib.dump(model, 'maayan.joblib')
