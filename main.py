@@ -2,10 +2,10 @@ import pandas as pd
 df = pd.read_csv('parkinsons.csv')
 df = df.dropna()
 
-feats = ['PPE','DFA']
-tg = 'status'
-x = df[feats]
-y = df[tg]
+features = ['PPE','DFA']
+target = 'status'
+x = df[features]
+y = df[target]
 
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
