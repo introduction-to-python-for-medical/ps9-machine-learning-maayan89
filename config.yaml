@@ -1,2 +1,2 @@
 path: "maayan.joblib
-features: ['PPE','DFA']
+feats: ['PPE','DFA']
